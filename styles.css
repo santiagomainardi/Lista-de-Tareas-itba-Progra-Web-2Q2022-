@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+:root {
+    --main: lightblue;
+    --primary: #A5C882;
+    --secondary: coral;
+    --light: white;
+    --dark: #000;
+    --diabled: #e7e7e7;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* flex-direction especifica cómo van los objetos flexibles en el contenedor flexible definiendo el eje principal y la dirección */
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    background-color: var(--diabled);
+    background-image: url(./img/giphy\ ciudad\ 8\ bits.gif);
+}
+
+*:first-letter {
+    text-transform: capitalize;
+}
+
+.roundBorder {
+    border-radius: 5px;
+}
+
+.list {
+    margin: 25px auto;
+    padding: 25px;
+    background-color: darkblue ;
+    width: 100%;
+    max-width: 350px;
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--light);
+}
+
+.dateRight {
+    display: flex;
+    align-items: center;
+}
+
+#dateNumber {
+    font-size: 50px;
+}
+
+#dateText {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#dateMonth,
+#dateNumber,
+#dateText  {
+    font-weight: bold;
+}
+
+#dateMonth,
+#dateYear {
+    margin-left: 7px;
+    font-size: 20px;
+}
+
+form {
+    margin: 20px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 40px auto;
+    grid-column-gap: 15px;
+}
+
+input {
+    border: none;
+    padding-left: 10px;
+    background-color: var(--diabled);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus {
+    outline: none;
+}
+
+.addTaskButton,
+.orderButton {
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.addTaskButton {
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: var(--diabled);
+}
+
+.addTaskButton:hover {
+    /* hover: "cuando le paso el mouse por arriba" */
+    background-color: cyan;
+}
+
+.orderButton {
+    background-color: var(--secondary);
+    color: var(--light);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+.orderButton:before{
+    content: attr(data-phonetext);
+}
+
+#tasksContainer {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Overflow es cómo vás a scrolear, sobre qué eje, moverte */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* ScrollBar Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* ScrollBar Handle */
+  ::-webkit-scrollbar-thumb {
+    background: lightgrey; 
+    border-radius: 10px;
+  }
+  
+  /* ScrollBar Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+  }
+
+#inputdesign {
+    height: 40px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.task {
+    background-color: var(--main);
+    padding: 15px;
+    margin-top: 15px;
+    color: var(--dark);
+    cursor: pointer;
+    display: flex;
+    width: 99%;
+    align-items: center;
+    position: relative;
+    height: 40px;
+}
+
+.task:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.borrar {
+    position: absolute;
+    right:10px;
+    cursor:pointer;
+    /* que se note que es clickeable */
+}
+
+.done {
+    background-color: var(--diabled);
+    text-decoration: line-through;
+    color: var(--dark);
+}
+
+@media only screen and (max-width: 300px) {
+    /* para que no se rompa */
+    .container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    /* Celu Vision */
+}
+
+@media only screen and (min-width: 700px) {
+    /* Tablet Vision */
+    .list{
+        max-width: 450px;
+    }
+    .orderButton:before{
+        content: attr(data-text);
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    /* Desktop Vision */
+    .container{flex-direction: column;
+        /* Esto es para que se vea una cosa al lado de la otra. */
+    }
+    .list{
+        max-width: 600px;
+    }
+
+    #inputdesign {
+        height: 50px;
+    }
+    
+    .task {
+        height: 50px;
+    }
+
+    form {
+        grid-template-columns: auto 50px auto;
+    }
+
+    .addTaskButton {
+        height: 50px;
+        border-radius: 50%;
+        font-size: 18px;
+        background-color: var(--diabled);
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--light);
+    }
+    
+    .dateRight {
+        display: flex;
+        align-items: center;
+    }
+    
+    #dateNumber {
+        font-size: 55px;
+    }
+    
+    #dateText {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    
+    #dateMonth,
+    #dateNumber,
+    #dateText  {
+        font-weight: bold;
+    }
+    
+    #dateMonth,
+    #dateYear {
+        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    .task {
+        font-size: 20px;
+    }
+
+    input,
+    input::placeholder {
+        font-size: 20px ;
+    }
+
+    .orderButton {
+        font-size: 20px;
+    }
+}
