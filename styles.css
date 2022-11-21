@@ -8,7 +8,6 @@
 
 :root {
     --main: lightblue;
-    --primary: #A5C882;
     --secondary: coral;
     --light: white;
     --dark: #000;
@@ -147,27 +146,24 @@ input:focus {
     /* Overflow es cómo vás a scrolear, sobre qué eje, moverte */
 }
 
+  /* ScrollBar */
+
 ::-webkit-scrollbar {
     width: 5px;
-  }
+}
   
-  /* ScrollBar Track */
-  ::-webkit-scrollbar-track {
+/* ScrollBar Track */
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
-  }
+}
    
   /* ScrollBar Handle */
-  ::-webkit-scrollbar-thumb {
-    background: lightgrey; 
+::-webkit-scrollbar-thumb {
+    background: var(--main); 
     border-radius: 10px;
-  }
+}
   
-  /* ScrollBar Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: grey; 
-  }
-
 #inputdesign {
     height: 40px;
     border-radius: 5px;
@@ -206,12 +202,6 @@ input:focus {
     color: var(--dark);
 }
 
-@media only screen and (max-width: 300px) {
-    /* para que no se rompa */
-    .container {
-        display: none;
-    }
-}
 
 @media only screen and (max-width: 700px) {
     /* Celu Vision */
@@ -255,37 +245,17 @@ input:focus {
         font-size: 18px;
         background-color: var(--diabled);
     }
-    .date {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: var(--light);
-    }
-    
-    .dateRight {
-        display: flex;
-        align-items: center;
-    }
     
     #dateNumber {
         font-size: 55px;
     }
     
     #dateText {
-        letter-spacing: 3px;
-        text-transform: uppercase;
         font-size: 20px;
     }
     
     #dateMonth,
-    #dateNumber,
-    #dateText  {
-        font-weight: bold;
-    }
-    
-    #dateMonth,
     #dateYear {
-        margin-left: 15px;
         font-size: 20px;
     }
 
