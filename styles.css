@@ -29,7 +29,7 @@ body {
     margin: 0;
     height: 100vh;
     background-color: var(--diabled);
-    background-image: url(./img/giphy\ ciudad\ 8\ bits.gif);
+    background-image: url(./img/fondo\ ciudad\ 8bit\ light.gif)
 }
 
 *:first-letter {
