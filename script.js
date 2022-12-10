@@ -1,3 +1,20 @@
+const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+//esto va a leer si está seteado en modo oscuro el sistema operativo del usuario
+const slider = document.getElementById("slider");
+
+const setTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme",theme);
+    localStorage.setItem("theme",theme)
+}
+
+slider.addEventListener("click", () => {
+    let switchToTheme  = localStorage.getItem("theme") === "dark" ? "light" : "dark";
+    setTheme(switchToTheme);
+}); //Si el usuario está usando dark, se cambia a light, y viceversa
+
+setTheme(localStorage.getItem("theme") || preferedColorScheme);
+
+
 // Info Fecha
 const dateNumber = document.getElementById('dateNumber');
 const dateText = document.getElementById('dateText');

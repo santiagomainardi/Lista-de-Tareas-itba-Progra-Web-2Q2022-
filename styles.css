@@ -6,12 +6,21 @@
     border: none;
 }
 
+
 :root {
-    --main: lightblue;
+    --tarea: lightblue;
     --secondary: coral;
     --light: white;
     --dark: #000;
     --diabled: #e7e7e7;
+}
+
+[data-theme="light"] {
+    --tarea: lightblue;
+}
+
+[data-theme="dark"] {
+    --tarea: lightblue;
 }
 
 .container{
@@ -38,6 +47,59 @@ body {
 
 .roundBorder {
     border-radius: 5px;
+}
+
+/* Estilos del switch */
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.sliderdesign {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tarea);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.sliderdesign:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--light);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+input:checked + .sliderdesign {
+    background-color: var(--tarea);
+}
+  
+input:checked + .sliderdesign:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 .list {
@@ -160,7 +222,7 @@ input:focus {
    
   /* ScrollBar Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--main); 
+    background: var(--tarea); 
     border-radius: 10px;
 }
   
@@ -172,7 +234,7 @@ input:focus {
 }
 
 .task {
-    background-color: var(--main);
+    background-color: var(--tarea);
     padding: 15px;
     margin-top: 15px;
     color: var(--dark);
@@ -271,4 +333,10 @@ input:focus {
     .orderButton {
         font-size: 20px;
     }
+}
+
+iframe {
+    border: 10px solid black;
+    width: 100%;
+    height: 300px;
 }
